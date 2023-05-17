@@ -1,6 +1,6 @@
 package orderTable
 
-type Order struct {
+type Order_Table struct {
 	OrderId    int    `gorm:"primaryKey;column:order_id;autoIncrement" json:"order_id"`
 	Nama       string `gorm:"column:nama" json:"nama"`
 	Tanggal    string `gorm:"column:tanggal" json:"tanggal"`
