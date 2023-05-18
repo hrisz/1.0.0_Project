@@ -18,7 +18,7 @@ func GetOrders(c *fiber.Ctx) error {
 			"message": result.Error.Error(),
 		})
 	}
-	// Return list of users
+	// Return list of orders
 	return c.Status(fiber.StatusOK).JSON(fiber.Map{
 		"message": "Data Order Berhasil Ditampilkan!",
 		"data":    orders,
@@ -53,7 +53,7 @@ func CreateOrder(c *fiber.Ctx) error {
 func GetOrder(c *fiber.Ctx) error {
 	// Get order_id parameter from request url
 	id := c.Params("order_id")
-	// Find user by order_id in database
+	// Find order by order_id in database
 	var order orderTable.Order_Table
 	result := database.DB.First(&order, id)
 	// Check if order exists
@@ -77,7 +77,7 @@ func GetOrder(c *fiber.Ctx) error {
 
 // PUT/UPDATE Method
 
-func UpdateUser(c *fiber.Ctx) error {
+func UpdateOrder(c *fiber.Ctx) error {
 	// Get order_id parameter from request url
 	id := c.Params("order_id")
 	// Find order by order_id in database
@@ -112,7 +112,7 @@ func UpdateUser(c *fiber.Ctx) error {
 //DELETE Method
 
 func DeleteOrder(c *fiber.Ctx) error {
-	// Get id_user parameter from request url
+	// Get id_order parameter from request url
 	id := c.Params("order_id")
 	// Find order by order_id in database
 	var order orderTable.Order_Table

@@ -14,7 +14,7 @@ func SetupOrderRoutes(router fiber.Router) {
 	// // Read one user
 	user.Get("/:order_id", order.GetOrder)
 	// // Update one user
-	user.Put("/:order_id", order.UpdateUser)
+	user.Put("/:order_id", order.UpdateOrder)
 	// // Delete one user
 	user.Delete("/:order_id", order.DeleteOrder)
 }
