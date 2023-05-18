@@ -8,13 +8,13 @@ import (
 func SetupOrderRoutes(router fiber.Router) {
 	user := router.Group("/order")
 	// Create a user
-	user.Post("/", order.CreateUser)
+	user.Post("/", order.CreateOrder)
 	// Read all users
-	user.Get("/", order.GetUsers)
+	user.Get("/", order.GetOrders)
 	// // Read one user
-	user.Get("/:id_user", order.GetUser)
+	user.Get("/:order_id", order.GetOrder)
 	// // Update one user
-	user.Put("/:id_user", order.UpdateUser)
+	user.Put("/:order_id", order.UpdateUser)
 	// // Delete one user
-	user.Delete("/:id_user", order.DeleteUser)
+	user.Delete("/:order_id", order.DeleteOrder)
 }

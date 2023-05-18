@@ -27,8 +27,6 @@ func ConnectDB() {
 	// Menghubungkan ke DB dan menginisialisasikan variabel DB
 	DB, err = gorm.Open(mysql.Open(dsn), &gorm.Config{
 		// Mematikan pluralisasi nama tabel secara global
-		// jika disetel ke true, `User` akan dipetakan ke tabel `users`
-		// alih-alih nama default, yaitu `user`
 		NamingStrategy: schema.NamingStrategy{
 			SingularTable: true,
 		},

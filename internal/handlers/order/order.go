@@ -8,9 +8,9 @@ import (
 
 //GET ALL Method
 
-func GetUsers(c *fiber.Ctx) error {
+func GetOrders(c *fiber.Ctx) error {
 	var orders []orderTable.Order_Table
-	// Find all users in database
+	// Find all orders in database
 	result := database.DB.Find(&orders)
 	// Check for errors during query execution
 	if result.Error != nil {
@@ -20,21 +20,21 @@ func GetUsers(c *fiber.Ctx) error {
 	}
 	// Return list of users
 	return c.Status(fiber.StatusOK).JSON(fiber.Map{
-		"message": "Data User Berhasil Ditampilkan!",
+		"message": "Data Order Berhasil Ditampilkan!",
 		"data":    orders,
 	})
 }
 
 //POST Method
 
-func CreateUser(c *fiber.Ctx) error {
+func CreateOrder(c *fiber.Ctx) error {
 	// Parse request body
-	var user orderTable.Order_Table
-	if err := c.BodyParser(&user); err != nil {
+	var order orderTable.Order_Table
+	if err := c.BodyParser(&order); err != nil {
 		return err
 	}
-	// Insert new user into database
-	result := database.DB.Create(&user)
+	// Insert new order into database
+	result := database.DB.Create(&order)
 	// Check for errors during insertion
 	if result.Error != nil {
 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
@@ -43,23 +43,23 @@ func CreateUser(c *fiber.Ctx) error {
 	}
 	// Return success message
 	return c.Status(fiber.StatusCreated).JSON(fiber.Map{
-		"message": "User Berhasil Ditambahkan!",
-		"data":    user,
+		"message": "Order Berhasil Ditambahkan!",
+		"data":    order,
 	})
 }
 
 //GET by ID Method
 
-func GetUser(c *fiber.Ctx) error {
-	// Get id_user parameter from request url
-	id := c.Params("id_user")
-	// Find user by id_user in database
-	var user orderTable.Order_Table
-	result := database.DB.First(&user, id)
-	// Check if user exists
+func GetOrder(c *fiber.Ctx) error {
+	// Get order_id parameter from request url
+	id := c.Params("order_id")
+	// Find user by order_id in database
+	var order orderTable.Order_Table
+	result := database.DB.First(&order, id)
+	// Check if order exists
 	if result.RowsAffected == 0 {
 		return c.Status(fiber.StatusNotFound).JSON(fiber.Map{
-			"message": "User Tidak Ditermukan!",
+			"message": "Order Tidak Ditermukan!",
 		})
 	}
 	// Check for errors during query
@@ -68,34 +68,34 @@ func GetUser(c *fiber.Ctx) error {
 			"message": result.Error.Error(),
 		})
 	}
-	// Return user
+	// Return order
 	return c.Status(fiber.StatusOK).JSON(fiber.Map{
 		"message": "Success",
-		"data":    user,
+		"data":    order,
 	})
 }
 
 // PUT/UPDATE Method
 
 func UpdateUser(c *fiber.Ctx) error {
-	// Get id_user parameter from request url
-	id := c.Params("id_user")
-	// Find user by id_user in database
-	var user orderTable.Order_Table
-	result := database.DB.First(&user, id)
-	// Check if user exists
+	// Get order_id parameter from request url
+	id := c.Params("order_id")
+	// Find order by order_id in database
+	var order orderTable.Order_Table
+	result := database.DB.First(&order, id)
+	// Check if order exists
 	if result.RowsAffected == 0 {
 		return c.Status(fiber.StatusNotFound).JSON(fiber.Map{
-			"message": "User Tidak Ditemukan",
+			"message": "Order Tidak Ditemukan",
 		})
 	}
 	// Parse request body
-	var newUser orderTable.Order_Table
-	if err := c.BodyParser(&newUser); err != nil {
+	var newOrder orderTable.Order_Table
+	if err := c.BodyParser(&newOrder); err != nil {
 		return err
 	}
-	// Update user in database
-	result = database.DB.Model(&user).Updates(newUser)
+	// Update order in database
+	result = database.DB.Model(&order).Updates(newOrder)
 	// Check for errors during update
 	if result.Error != nil {
 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
@@ -104,27 +104,27 @@ func UpdateUser(c *fiber.Ctx) error {
 	}
 	// Return success message
 	return c.Status(fiber.StatusOK).JSON(fiber.Map{
-		"message": "User Berhasil Diperbarui!",
-		"data":    user,
+		"message": "Order Berhasil Diperbarui!",
+		"data":    order,
 	})
 }
 
 //DELETE Method
 
-func DeleteUser(c *fiber.Ctx) error {
+func DeleteOrder(c *fiber.Ctx) error {
 	// Get id_user parameter from request url
-	id := c.Params("id_user")
-	// Find user by id_user in database
-	var user orderTable.Order_Table
-	result := database.DB.First(&user, id)
-	// Check if user exists
+	id := c.Params("order_id")
+	// Find order by order_id in database
+	var order orderTable.Order_Table
+	result := database.DB.First(&order, id)
+	// Check if order exists
 	if result.RowsAffected == 0 {
 		return c.Status(fiber.StatusNotFound).JSON(fiber.Map{
-			"message": "User Tidak Ditemukan",
+			"message": "Order Tidak Ditemukan",
 		})
 	}
-	// Delete user from database
-	result = database.DB.Delete(&user)
+	// Delete order from database
+	result = database.DB.Delete(&order)
 	// Check for errors during deletion
 	if result.Error != nil {
 		return c.Status(fiber.StatusBadRequest).JSON(fiber.Map{
@@ -133,7 +133,7 @@ func DeleteUser(c *fiber.Ctx) error {
 	}
 	// Return success message
 	return c.Status(fiber.StatusOK).JSON(fiber.Map{
-		"message": "User Berhasil Dihapus!",
-		"data":    user,
+		"message": "Order Berhasil Dihapus!",
+		"data":    order,
 	})
 }

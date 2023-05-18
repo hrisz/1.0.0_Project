@@ -5,6 +5,7 @@ type Order_Table struct {
 	Nama       string `gorm:"column:nama" json:"nama"`
 	Tanggal    string `gorm:"column:tanggal" json:"tanggal"`
 	Barang     string `gorm:"column:barang" json:"barang"`
+	Deskripsi  string `gorm:"column:desc_masalah" json:"desc_masalah"`
 	Lokasi     string `gorm:"column:lokasi" json:"lokasi"`
 	Pembayaran string `gorm:"column:pembayaran" json:"pembayaran"`
 }
