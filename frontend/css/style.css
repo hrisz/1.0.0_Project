@@ -1,0 +1,39 @@
+/* Navbar setting */
+nav.navbar-expand-lg{
+    position: sticky;
+    top: 0;
+	z-index: 1;
+    background-color: transparent;
+}
+
+
+/* background */
+
+.main-bg {
+  background-image: url(https://wallpaper.dog/large/20420792.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 800px;
+  background-attachment: fixed;
+}
+
+[data-bs-theme="dark"] {
+    color-scheme: dark;
+}
+
+/* Welcome Text */
+
+h1.welcome-text {
+    text-align: center;
+    color: white;
+}
+
+p.main-order {
+    color: black;
+    text-align: center;
+    background-color: white;
+    border-radius: 20px;
+	margin-top: 20px;
+	padding: 10px 15px 10px 15px;
+}
