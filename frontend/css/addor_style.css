@@ -1,0 +1,35 @@
+/* addor_style.css for style in add_order.html */
+
+/* Navbar setting */
+nav.navbar-expand-lg{
+    position: sticky;
+    top: 0;
+	z-index: 1;
+}
+
+/* background */
+
+.main-bg {
+  background-image: url(https://wallpapercave.com/wp/wp4766531.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 800px;
+  background-attachment: fixed;
+}
+
+[data-bs-theme="dark"] {
+    color-scheme: dark;
+}
+
+h1.title{
+    text-align: center;
+    color: white;
+    position: relative;
+    top: 10px;
+}
+
+label {
+    color: white;
+    font-weight: bold;
+}

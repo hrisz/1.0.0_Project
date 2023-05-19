@@ -1,16 +1,17 @@
+/* dator_style.css for style in data_order.html */
+
 /* Navbar setting */
 nav.navbar-expand-lg{
     position: sticky;
     top: 0;
 	z-index: 1;
-    background-color: transparent;
 }
 
 
 /* background */
 
 .main-bg {
-  background-image: url(https://wallpaper.dog/large/20420792.jpg);
+  background-image: url(https://r4.wallpaperflare.com/wallpaper/644/305/118/pattern-black-gradient-texture-wallpaper-1be65c2d03e1bf994574abb9dd4c6c70.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -29,25 +30,12 @@ h1.welcome-text {
     color: white;
 }
 
-a.main-order {
+p.main-order {
     color: black;
     text-align: center;
-    text-decoration: none;
     background-color: white;
-    position: relative;
-    top: 10px;
-    border-radius: 10px;
-	margin-top: 10px;
-	padding: 10px 15px 10px 15px;
-}
-
-a.main-order:hover {
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    background-color: rgb(255, 136, 0);
-    border-radius: 10px;
-	margin-top: 10px;
+    border-radius: 20px;
+	margin-top: 20px;
 	padding: 10px 15px 10px 15px;
 }
 

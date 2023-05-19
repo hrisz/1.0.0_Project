@@ -15,10 +15,6 @@ fetch("http://127.0.0.1:3000/api/order")
                 <td>${values.desc_masalah}</td>
                 <td>${values.lokasi}</td>
                 <td>${values.pembayaran}</td>
-                <td>
-                <button type="button" class="btn btn-success" order-id="${values.order_id}">Edit</button>
-                <button type="button" class="btn btn-danger" order-id="${values.order_id}">Delete</button>
-              </td>
                 </tr>`;
 		});
 		// Tampilkan data pegawai ke dalam tabel
@@ -28,7 +24,7 @@ fetch("http://127.0.0.1:3000/api/order")
 		const deleteButtons = document.querySelectorAll('.btn-danger');
 		deleteButtons.forEach((button) => {
 			button.addEventListener('click', (event) => {
-				const id_user = event.target.getAttribute('order-id');
+				const order_id = event.target.getAttribute('order-id');
 				// Kirim permintaan DELETE ke server
 				fetch(`http://127.0.0.1:3000/api/order/${order_id}`, {
 					method: 'DELETE'
@@ -54,12 +50,12 @@ fetch("http://127.0.0.1:3000/api/order")
 		const detailButtons = document.querySelectorAll('.btn-success');
 		detailButtons.forEach((button) => {
 			button.addEventListener('click', (event) => {
-				const id_user = event.target.getAttribute('order-id');
-				window.location.href = `update.html?id_user=${order_id}`;
+				const order_id = event.target.getAttribute('order-id');
+				window.location.href = `update.html?order_id=${order_id}`;
 			});
 		});
 	})
 	.catch(error => {
 		console.log('error', error);
-		alert('Terjadi kesalahan pada server');
+		alert('Terjadi kesalahan pada server');
 	});
