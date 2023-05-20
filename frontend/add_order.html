@@ -20,7 +20,15 @@
       <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">Teknisian</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
@@ -39,76 +47,75 @@
         <h1 class="title">PESANAN</h1>
         <div class="col-lg-7 mx-auto">
           <br />
-          <div class="row mb-3">
-            <!-- Field Nama -->
-            <label for="colFormLabel" class="col-sm-2 col-form-label"
-              >Nama</label
-            >
-            <div class="col-sm-10">
-              <input
-                type="email"
-                class="form-control"
-                id="colFormLabel"
-                placeholder="Masukkan nama anda."
-              />
-            </div>
-            <br /><br />
-
-            <!-- Field barang -->
-            <label for="colFormLabel" class="col-sm-2 col-form-label"
-              >Merek barang</label
-            >
-            <div class="col-sm-10">
-              <input
-                type="email"
-                class="form-control"
-                id="colFormLabel"
-                placeholder="Masukkan nama barang yang ingin diperbaiki."
-              />
-            </div>
-            <br /><br />
-
-            <!-- Field lokasi -->
-            <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label"
-                >Lokasi</label
+          <div class="mid">
+          <form id="order-form" role="form">
+            <div class="row mb-3">
+              <!-- Field Nama -->
+              <label for="colFormLabel" class="col-sm-2 col-form-label"
+                >Nama</label
               >
-              <input
-                type="email"
-                class="form-control"
-                id="exampleFormControlInput1"
-                placeholder="Masukkan lokasi anda sekarang."
-              />
-            </div>
+              <div class="col-sm-10">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nama"
+                  placeholder="Masukkan nama anda."
+                  required
+                />
+              </div>
+              <br /><br />
 
-            <!-- Field pembayaran -->
-            <div class="mb-3">
-              <label for="exampleFormControlTextarea1" class="form-label"
-                >Metode Pembayaran</label
+              <!-- Field barang -->
+              <label for="colFormLabel" class="col-sm-2 col-form-label"
+                >Merek barang</label
               >
-              <select
-                class="form-select mb-3"
-                aria-label="Default select example"
-              >
-                <option selected>---</option>
-                <option value="1">Tunai (COD)</option>
-              </select>
-            </div>
+              <div class="col-sm-10">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="barang"
+                  placeholder="Masukkan nama barang yang ingin diperbaiki."
+                  required
+                />
+              </div>
+              <br /><br />
 
-            <!-- Field deskripsi masalah -->
-            <div class="mb-3">
-              <label for="exampleFormControlTextarea1" class="form-label"
-                >Deskripsi Masalah</label
-              >
-              <textarea
-                class="form-control"
-                id="exampleFormControlTextarea1"
-                rows="3"
-                maxlength="90"
-                placeholder="Deskripsikan masalah yang terjadi pada barang anda (maks. 90 huruf)"
-              ></textarea>
+              <!-- Field lokasi -->
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label"
+                  >Lokasi</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="lokasi"
+                  placeholder="Masukkan lokasi anda sekarang."
+                  required
+                />
+              </div>
+
+              <!-- Field deskripsi masalah -->
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label"
+                  >Deskripsi Masalah</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="masalah"
+                  placeholder="Ketik masalah yang terjadi pada barang anda"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <p class="font-monospace">*Note: untuk pembayaran, anda bisa bayar secara langsung kepada teknisi setelah diperbaiki, terima kasih!*</p>
+              </div>
+              <div class="d-grid gap-2">
+              <button type="button" onclick="addTanggal" class="btn btn-primary">Order!</button>
+              </div>
             </div>
-          </div>
+          </form>
+        </div>
         </div>
       </div>
     </div>
@@ -124,5 +131,6 @@
         <a class="text-light">Haris, Dzul</a>
       </div>
     </footer>
+    <script src="js/add_order.js"></script>
   </body>
 </html>
