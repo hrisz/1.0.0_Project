@@ -14,7 +14,8 @@ fetch("http://127.0.0.1:3000/api/order")
                 <td>${values.barang}</td>
                 <td>${values.desc_masalah}</td>
                 <td>${values.lokasi}</td>
-                <td>${values.pembayaran}</td>
+				<td><button type="button" class="btn btn-success" order-id="${values.order_id}">Update</button></td>
+                <td><button type="button" class="btn btn-danger" order-id="${values.order_id}">Batalkan</button></td>
                 </tr>`;
 		});
 		// Tampilkan data pegawai ke dalam tabel
@@ -33,7 +34,8 @@ fetch("http://127.0.0.1:3000/api/order")
 						if (response.ok) {
 							// Sukses menghapus data, lakukan tindakan sesuai kebutuhan (misalnya, memperbarui tampilan tabel)
 							// Contoh:
-							event.target.parentNode.parentNode.remove(); // Menghapus baris tabel yang sesuai dengan tombol delete yang diklik
+							event.target.parentNode.parentNode.remove();
+							alert("Order berhasil dibatalkan"); // Menghapus baris tabel yang sesuai dengan tombol delete yang diklik
 						} else {
 							// Gagal menghapus data, berikan umpan balik kepada pengguna atau tangani kesalahan
 							throw new Error('Gagal menghapus data');
@@ -51,7 +53,7 @@ fetch("http://127.0.0.1:3000/api/order")
 		detailButtons.forEach((button) => {
 			button.addEventListener('click', (event) => {
 				const order_id = event.target.getAttribute('order-id');
-				window.location.href = `update.html?order_id=${order_id}`;
+				window.location.href = `edit_order.html?order_id=${order_id}`;
 			});
 		});
 	})
