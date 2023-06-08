@@ -11,13 +11,14 @@
       integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="css/dator_style.css" />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
+
     <!-- Bagian Navbar -->
 
     <div class="main-bg">
-      <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+      <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">Teknisian</a>
           <button
@@ -33,11 +34,10 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-              <a class="nav-link" href="admin_menu.html">Home</a>
-              <a class="nav-link active" href="#">Order Data</a>
-              <a class="nav-link" href="history_order.html">Finished Order</a>
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link" href="list_order.html">List Order</a>
               <div class="position-absolute top-50 end-0 translate-middle-y">
-                <a class="access-status">Admin</a>
+                <a class="access-status">Teknisi</a>
                 <button type="button" class="btn btn-warning" onclick="Logout()">Logout</button>
               </div>
             </div>
@@ -45,38 +45,22 @@
         </div>
       </nav>
 
-      <!-- Tampilan Table website -->
-      <br>
-      <div class="container-xxl">
-        <div class="table-responsive-xxl">
-          <table class="table table-dark table-hover border-warning-subtle">
-            <thead class="table-dark border-danger">
-                <tr>
-                    <th>ID</th>
-                    <th>Tanggal</th>
-                    <th>Nama</th>
-                    <th>Nomor HP</th>
-                    <th>Barang</th>
-                    <th>Masalah</th>
-                    <th>Lokasi</th>
-                    <th colspan="2">Opsi</th>
-                </tr>
-                <tbody id="order-table">
-                    <script src="js/data_order.js"></script>
-                </tbody>
-            </thead>
-          </table>
+      <!-- Tampilan awal website -->
+
+      <div class="container-fluid">
+        <div class="position-absolute top-50 start-50 translate-middle">
+          <h1 class="welcome-text">Welcome, Teknisi!</span></h1>
+          <center>
+          <a class="main-order" href="list_order.html">Cek Daftar Pesanan</a>
+          </center>
         </div>
       </div>
     </div>
 
     <!-- Bagian footer -->
 
-    <footer class="bg-dark text-center text-lg-start">
-      <div
-        class="text-center text-light p-3"
-        style="background-color: rgba(0, 0, 0, 0.2)"
-      >
+    <footer class="bg-dark text-center text-lg-start">>
+      <div class="text-center text-light p-3" style="background-color: rgba(0, 0, 0, 0.2);">
         A Project by:
         <a class="text-light">Haris, Dzul</a>
       </div>

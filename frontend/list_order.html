@@ -33,11 +33,10 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-              <a class="nav-link" href="admin_menu.html">Home</a>
-              <a class="nav-link active" href="#">Order Data</a>
-              <a class="nav-link" href="history_order.html">Finished Order</a>
+              <a class="nav-link" href="teknisi_menu.html">Home</a>
+              <a class="nav-link active" href="#">List Order</a>
               <div class="position-absolute top-50 end-0 translate-middle-y">
-                <a class="access-status">Admin</a>
+                <a class="access-status">Teknisi</a>
                 <button type="button" class="btn btn-warning" onclick="Logout()">Logout</button>
               </div>
             </div>
@@ -49,7 +48,7 @@
       <br>
       <div class="container-xxl">
         <div class="table-responsive-xxl">
-          <table class="table table-dark table-hover border-warning-subtle">
+          <table class="table table-dark table-hover border-info">
             <thead class="table-dark border-danger">
                 <tr>
                     <th>ID</th>
@@ -62,11 +61,14 @@
                     <th colspan="2">Opsi</th>
                 </tr>
                 <tbody id="order-table">
-                    <script src="js/data_order.js"></script>
+                    <script src="js/list_order.js"></script>
                 </tbody>
             </thead>
           </table>
         </div>
+        <center>
+          <p class="teknisi_note">Harap hapus pesanan setelah pesanan tersebut diselesaikan!<br> Terima kasih</p>
+        </center>
       </div>
     </div>
 

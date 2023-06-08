@@ -1,4 +1,4 @@
-/* dator_style.css for style in data_order.html */
+/* dator_style.css for style in data_order.html and list_order.html*/
 
 /* Navbar setting */
 nav.navbar-expand-lg{
@@ -41,4 +41,44 @@ p.main-order {
 
 tbody {
     color: white;
+}
+
+button.btn-warning {
+    position: relative;
+    right: 10px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(255, 98, 0);
+    border: none;
+}
+
+button.btn-warnin:hover {
+    position: relative;
+    right: 10px;
+    font-weight: bold;
+}
+
+th{
+    text-align: center;
+}
+
+th.thistory {
+    text-align: left;
+}
+
+a.access-status {
+    color: white;
+    position: relative;
+    right: 20px;
+    top: 3px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+a.text-light {
+    text-decoration: none;
+}
+
+p.teknisi_note {
+    color: white;
+    font-weight: bold;
 }

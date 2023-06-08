@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teknisian</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/addor_style.css" />
+  </head>
+  <body>
+
+    <!-- Bagian Navbar -->
+
+    <div class="main-bg">
+      <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Teknisian</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link" aria-current="page" href="index.html">Home</a>
+              <a class="nav-link active" href="add_order.html">Buat Pesanan</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Card tanda terima kasih -->
+
+      <div class="vh-100 d-flex justify-content-center align-items-center fix-position">
+        <div class="col-md-4">
+            <div class="border border-3 border-success"></div>
+            <div class="card  bg-white shadow p-5">
+                <div class="mb-4 text-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="text-success" width="75" height="75"
+                        fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                        <path
+                            d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06
+                            1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z" />
+                    </svg>
+                </div>
+                <div class="text-center">
+                    <h1>Thank You !</h1>
+                    <p>Terima kasih sudah memesan! jika anda ingin membatalkan pesanan ataupun ada masalah lainnya, harap hubungi customer service kami!<br></p>
+                    <p>Pesanan ini dibuat pada<br><span>Tanggal: <span style="font-weight: bold;" id="tanggal">
+                    </span><br>Jam: <span style="font-weight: bold;" id="waktu"></span> WIB</span></p>
+                    <a class="btn btn-outline-success" href="index.html">Home</a>
+                </div>
+            </div>
+        </div>
+      </div>
+
+    <!-- Bagian footer -->
+
+    <footer class="bg-dark text-center text-lg-start">
+      <div
+        class="text-center text-light p-3"
+        style="background-color: rgba(0, 0, 0, 0.2)"
+      >
+        A Project by:
+        <a class="text-light">Haris, Dzul</a>
+      </div>
+    </footer>
+    <script src="js/date.js"></script>
+  </body>
+</html>

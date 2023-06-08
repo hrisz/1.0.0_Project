@@ -33,9 +33,8 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-              <a class="nav-link" aria-current="page" href="index.html">Home</a>
-              <a class="nav-link active" href="#">Buat Pesanan</a>
-              <a class="nav-link" href="data_order.html">Order Data</a>
+              <a class="nav-link" aria-current="page" href="admin_menu.html">Home</a>
+              <a class="nav-link active" href="data_order.html">Order Data</a>
             </div>
           </div>
         </div>
@@ -44,7 +43,7 @@
       <!-- Tampilan Form -->
 
       <div class="container">
-        <h1 class="title">PESANAN</h1>
+        <h1 class="title">UPDATE PESANAN</h1>
         <div class="col-lg-7 mx-auto">
           <br />
           <div class="mid">
@@ -61,9 +60,25 @@
                   id="nama"
                   placeholder="Masukkan nama anda."
                   required
+                  disabled
                 />
               </div>
               <br /><br />
+
+              <!-- Field Nomor HP -->
+              <label for="colFormLabel" class="col-sm-2 col-form-label"
+              >Nomor HP</label
+            >
+            <div class="col-sm-10">
+              <input
+                type="number"
+                class="form-control"
+                id="nomor_hp"
+                placeholder="Masukkan nomor HP anda."
+                required
+              />
+            </div>
+            <br /><br />
 
               <!-- Field barang -->
               <label for="colFormLabel" class="col-sm-2 col-form-label"
@@ -109,11 +124,8 @@
               </div>
               
               <input type="hidden" id="tanggal" name="tanggal" value="">
-              <div class="mb-3">
-                <p class="font-monospace">*Note: untuk pembayaran, anda bisa bayar secara langsung kepada teknisi setelah diperbaiki, terima kasih!*</p>
-              </div>
               <div class="d-grid gap-2">
-              <button type="button" class="btn btn-primary">Order!</button>
+              <button type="button" class="btn btn-primary">Update!</button>
               </div>
             </div>
           </form>

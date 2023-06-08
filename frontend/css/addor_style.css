@@ -18,10 +18,12 @@ nav.navbar-expand-lg{
   background-attachment: fixed;
 }
 
+/* Mengatur tema menjadi gelap dengan bootstrap */
 [data-bs-theme="dark"] {
     color-scheme: dark;
 }
 
+/* Bagian judul */
 h1.title{
     text-align: center;
     color: white;
@@ -29,17 +31,53 @@ h1.title{
     top: 40px;
 }
 
+/* Judul pada setiap field form */
 label {
     color: white;
     font-weight: bold;
 }
 
+/* Style untuk teks note */
 p.font-monospace {
     color: white;
     text-align: center;
 }
 
+/* Mengatur posisi form */
 .mid {
     position: relative;
     top: 50px;
+}
+
+/* Mengatur posisi form */
+.mid {
+    position: relative;
+    bottom: 100px;
+}
+
+/* Style untuk tombol login */
+
+a.login {
+    position: relative;
+    right: 10px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(255, 98, 0);
+    border: none;
+}
+
+a.login:hover {
+    position: relative;
+    right: 10px;
+    color: black;
+    background-color: rgb(255, 204, 0);
+}
+
+/* Menghilangkan dekorasi teks pada footer */
+a.text-light {
+    text-decoration: none;
+}
+
+.fix-position{
+    position: relative;
+    bottom: 50px;
 }

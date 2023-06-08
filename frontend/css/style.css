@@ -6,7 +6,6 @@ nav.navbar-expand-lg{
     background-color: transparent;
 }
 
-
 /* background */
 
 .main-bg {
@@ -28,6 +27,8 @@ h1.welcome-text {
     text-align: center;
     color: white;
 }
+
+/* Style untuk tombol order pada index.html */
 
 a.main-order {
     color: black;
@@ -54,3 +55,52 @@ a.main-order:hover {
 tbody {
     color: white;
 }
+
+/* Style untuk tombol login */
+
+a.login {
+    position: relative;
+    right: 10px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(255, 98, 0);
+    border: none;
+}
+
+a.login:hover {
+    position: relative;
+    right: 10px;
+    color: black;
+    background-color: rgb(255, 204, 0);
+}
+
+/* Style untuk tombol logout */
+
+button.btn-warning {
+    position: relative;
+    right: 10px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(255, 98, 0);
+    border: none;
+}
+
+button.btn-warnin:hover {
+    position: relative;
+    right: 10px;
+    font-weight: bold;
+}
+
+/* Style untuk status akses */
+
+a.access-status {
+    color: white;
+    position: relative;
+    right: 20px;
+    top: 3px;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+a.text-light {
+    text-decoration: none;
+}
+

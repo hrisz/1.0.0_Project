@@ -6,10 +6,10 @@ import (
 	"project_1/internal/model"
 )
 
-//GET ALL Method
+//GET ALL Method in orders
 
 func GetOrders(c *fiber.Ctx) error {
-	var orders []orderTable.Order_Table
+	var orders []tableDB.Order_Table
 	// Find all orders in database
 	result := database.DB.Find(&orders)
 	// Check for errors during query execution
@@ -29,7 +29,7 @@ func GetOrders(c *fiber.Ctx) error {
 
 func CreateOrder(c *fiber.Ctx) error {
 	// Parse request body
-	var order orderTable.Order_Table
+	var order tableDB.Order_Table
 	if err := c.BodyParser(&order); err != nil {
 		return err
 	}
@@ -54,7 +54,7 @@ func GetOrder(c *fiber.Ctx) error {
 	// Get order_id parameter from request url
 	id := c.Params("order_id")
 	// Find order by order_id in database
-	var order orderTable.Order_Table
+	var order tableDB.Order_Table
 	result := database.DB.First(&order, id)
 	// Check if order exists
 	if result.RowsAffected == 0 {
@@ -81,7 +81,7 @@ func UpdateOrder(c *fiber.Ctx) error {
 	// Get order_id parameter from request url
 	id := c.Params("order_id")
 	// Find order by order_id in database
-	var order orderTable.Order_Table
+	var order tableDB.Order_Table
 	result := database.DB.First(&order, id)
 	// Check if order exists
 	if result.RowsAffected == 0 {
@@ -90,7 +90,7 @@ func UpdateOrder(c *fiber.Ctx) error {
 		})
 	}
 	// Parse request body
-	var newOrder orderTable.Order_Table
+	var newOrder tableDB.Order_Table
 	if err := c.BodyParser(&newOrder); err != nil {
 		return err
 	}
@@ -115,7 +115,7 @@ func DeleteOrder(c *fiber.Ctx) error {
 	// Get id_order parameter from request url
 	id := c.Params("order_id")
 	// Find order by order_id in database
-	var order orderTable.Order_Table
+	var order tableDB.Order_Table
 	result := database.DB.First(&order, id)
 	// Check if order exists
 	if result.RowsAffected == 0 {

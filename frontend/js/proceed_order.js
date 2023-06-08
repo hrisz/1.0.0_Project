@@ -3,6 +3,7 @@ const urlParams = new URLSearchParams(window.location.search);
 const idOrder = urlParams.get("order_id");
 // Ambil elemen formulir
 const form = document.getElementById("order-form");
+const tanggalInput = document.getElementById("tanggalorder");
 const namaInput = document.getElementById("nama");
 const kontakInput = document.getElementById("nomor_hp");
 const barangInput = document.getElementById("barang");
@@ -15,6 +16,7 @@ fetch(`http://127.0.0.1:3000/api/order/${idOrder}`)
   })
   .then((data) => {
     const order = data.data;
+    tanggalInput.value = order.tanggal;
     namaInput.value = order.nama;
     kontakInput.value = order.nomor_hp;
     barangInput.value = order.barang;
@@ -25,6 +27,7 @@ fetch(`http://127.0.0.1:3000/api/order/${idOrder}`)
 function updateData() {
   // Buat objek data yang akan dikirim ke server
   const data = {
+    tanggal: tanggalInput.value,
     nama: namaInput.value,
     nomor_hp: kontakInput.value,
     barang: barangInput.value,
@@ -33,24 +36,24 @@ function updateData() {
   };
   // Buat konfigurasi untuk request
   const options = {
-    method: "PUT",
+    method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(data),
   };
   // Kirim request ke server
-  fetch(`http://127.0.0.1:3000/api/order/${idOrder}`, options)
+  fetch(`http://127.0.0.1:3000/api/history`, options)
     .then((result) => {
       return result.json();
     })
     .then((data) => {
-      alert("Order berhasil diupdate");
-      window.location.href = "admin_menu.html";
+      alert("Order berhasil diselesaikan");
+      window.location.href = "list_order.html";
     })
     .catch((error) => {
       console.error(error);
-      alert("Order gagal diupdate");
+      alert("Order gagal diselesaikan");
     });
 }
 // Tambahkan event listener pada tombol update
