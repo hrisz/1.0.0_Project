@@ -5,7 +5,7 @@ fetch("http://127.0.0.1:3000/api/order")
   .then((data) => {
     let tableData = "";
     data.data.map((values) => {
-      // Manipulasi data order dan masukkan ke dalam bentuk tabel
+      // Manipulasi data order dan masukkannya ke dalam bentuk tabel
       tableData += `
                 <tr>
 				        <td>${values.order_id}</td>
@@ -22,7 +22,7 @@ fetch("http://127.0.0.1:3000/api/order")
     // Tampilkan data order ke dalam tabel
     document.getElementById("order-table").innerHTML = tableData;
 
-    // Tambahkan event listener pada setiap tombol delete
+    // Tambahkan event listener pada setiap tombol selesaikan pesanan
     const proceedButtons = document.querySelectorAll(".btn-primary");
     proceedButtons.forEach((button) => {
       button.addEventListener("click", (event) => {
